@@ -44,5 +44,6 @@ public class AluminiController {
         aluminiService.updateAlumini(aluminiModel);
         return aluminiModel;
     }
+    
 
 }

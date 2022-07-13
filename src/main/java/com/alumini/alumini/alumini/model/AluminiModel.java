@@ -6,21 +6,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "alumini")
 public class AluminiModel {
     @Id
-    @Column
+    @Column(unique = true, nullable = false)
     private String id;
-    @Column
+    @Column(nullable = false)
     private String name;
-    @Column
+    @Column(nullable = false, unique = true)
     private String email;
-    @Column
+    @Column(nullable = false, unique = true)
     private String mobile;
     @Column
     private String company;
-    @Column
-    private String designation;
+
 
     public String getId() {
         return id;
@@ -62,21 +61,13 @@ public class AluminiModel {
         this.company = company;
     }
 
-    public String getDesignation() {
-        return designation;
-    }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
-
-    public AluminiModel(String id, String name, String email, String mobile, String company, String designation) {
+    public AluminiModel(String id, String name, String email, String mobile, String company) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.mobile = mobile;
         this.company = company;
-        this.designation = designation;
     }
 
     public AluminiModel() {
